@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HealthActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check all boxes with visible symptoms" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="low Milk Production" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dullness" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weakness" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Low Appetite" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fever" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distress" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convulsions" />
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Breathing difficulties" />
+
+    <CheckBox
+        android:id="@+id/checkBox9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salivation" />
+
+    <CheckBox
+        android:id="@+id/checkBox10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Swollen Teats" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abortion" />
+
+    <CheckBox
+        android:id="@+id/checkBox12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Swollen hooves" />
+
+    <CheckBox
+        android:id="@+id/checkBox13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Body discharge" />
+
+    <CheckBox
+        android:id="@+id/checkBox14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sudden death" />
+
+    <CheckBox
+        android:id="@+id/checkBox15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Swellings" />
+
+    <CheckBox
+        android:id="@+id/checkBox16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lameness" />
+
+    <CheckBox
+        android:id="@+id/checkBox17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rumination" />
+
+    <CheckBox
+        android:id="@+id/checkBox18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rapid pulse" />
+    <CheckBox
+        android:id="@+id/checkBox19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Swollen stomach" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan for disease" />
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/dis"
+         android:text="lets see"/>
+    </LinearLayout>
+
+
+</ScrollView>

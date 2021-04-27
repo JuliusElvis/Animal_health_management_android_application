@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Livestock Manager</string>
+
+    <string name="LivestockManager">Livestock Manager</string>
+    <string name="UserName">Username</string>
+    <string name="UsernameHint">James Bond</string>
+    <string name="Emailhint">jamesbond@gmail.com</string>
+    <string name="PasswordHint">6-8 characters</string>
+    <string name="cowNameHint">Cow1</string>
+    <string name="Password">Password</string>
+    <string name="ConfirmPassword">Confirm Password</string>
+    <string name="Login">Log in</string>
+    <string name="Register">Register</string>
+    <string name="NotRegistered">Not Registered??</string>
+    <string name="fullname">FullName</string>
+    <string name="AlreadyRegistered">Already Registered??</string>
+    <string name="ForgotPass">Forgot Password??</string>
+    <string name="Email">Email</string>
+    <string name="cowName">Cow Name:</string>
+    <string name="typeOfAnimal">Type of Animal:</string>
+
+    <string name="Deworming1">1st Deworming:When grazing begins</string>
+    <string name="Deworming2">2nd Deworming:6-8 wks after birth</string>
+    <string name="calfTag">Calf Tagging:</string>
+    <string name="gender">Gender:</string>
+    <string name="DOB">Date of birth:</string>
+    <string name="IBR">IBR Vaccine:</string>
+    <string name="Theileriosis">Theilriosis Vaccine:</string>
+    <string name="Disbudding">Disbudding:2-6 weeks after birth</string>
+    <string name="Castrating">Castrating:From birth- 6 months</string>
+    <string name="Weaning">Weaning:7-8 weeks after birth</string>
+    <string name="Anthrax">Anthrax Vaccine:</string>
+    <string name="Brucellosis">Brucellosis Vaccine:</string>
+    <string name="footAndMouth">FootAndMouth Vaccine:</string>
+    <string name="blackQuarter">BlackQuarter Vaccine:</string>
+    <string name="septicaemia">Septicaemia Vaccine:</string>
+    <string name="milkFever">MilkFever Vaccine:</string>
+    <string name="earTagging">Ear Tagging:</string>
+    <string name="goatPox">Goat Pox Vaccine:</string>
+    <string name="ccpp">C.C.P.P Vaccine:</string>
+    <string name="tetanus">Tetanus CDT Vaccine:</string>
+    <string name="Enterotoxaemia">Enterotoxaemia Vaccine:</string>
+    <string name="anthrax">Anthrax Vaccine:</string>
+    <string name="multiVax">multiVax-P Vaccine:</string>
+    <string name="rinderPest">Rinderpest Vaccine:</string>
+
+    <string name="Mareks">Mareks Vaccine:</string>
+    <string name="Gumboro">Gumboro Vaccine:</string>
+    <string name="Gumboro2">Gumboro(2nd dose):</string>
+    <string name="Newcastle">Newcastle Vaccine:</string>
+    <string name="Newcastle2">Newcastle(2nd dose):</string>
+    <string name="fowlPox">FowlPox Vaccine:</string>
+    <string name="Deworm">Deworming:</string>
+    <string name="bursal">Bursal Vaccine:</string>
+    <string name="Bronchitis">Bronchitis Vaccine:</string>
+    <string name="NCD">NCD Vaccine:</string>
+    <string name="IBD">IBD Vaccine(1st dose):</string>
+    <string name="fowlCholera">Fowl Cholera Vaccine:</string>
+    <string name="fowlTyphoid">Fowl Typhoid Vaccine:</string>
+
+    <string name="afterBirth">After Birth:Warm and Dry piglets</string>
+    <string name="iron">Iron Shot:</string>
+    <string name="Castration">Castration:</string>
+    <string name="teethClipping">Teeth Clipping:</string>
+    <string name="tailDocking">Tail Docking:</string>
+    <string name="weaning">Weaning:4-8 weeks after birth</string>
+    <string name="prrs">PRRS Vaccine:</string>
+    <string name="swineFever">SwineFever Vaccine:</string>
+    <string name="swineFever2">SwineFever(2nd Dose):</string>
+    <string name="rhinitis">Rhinitis Booster:</string>
+    <string name="parvoVirus">ParvoVirus Vaccine:</string>
+    <string name="swineInfluenza">SwineInfluenza Vaccine:</string>
+    <string name="glassersVaccine">Glassers Vaccine:</string>
+
+
+    <string name="heading">Enter animal details to generate list of health maintenance practices</string>
+
+    <string-array name="animalName">
+        <item>Cow</item>
+        <item>Pigs</item>
+        <item>Sheep/Goats</item>
+        <item>Poultry</item>
+    </string-array>
+</resources>
