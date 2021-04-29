@@ -11,6 +11,7 @@ import com.example.project.R;
 
 public class HomeActivity extends AppCompatActivity {
     CardView animalCalendar,vetReg,healthCheck,help;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         vetReg = findViewById(R.id.vetReg);
         healthCheck = findViewById(R.id.healthCheck);
         help = findViewById(R.id.help);
+        username = getIntent().getExtras().getString("username");
 
 
         animalCalendar.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void openActivity(){
         Intent intent = new Intent(this, VetDocActivity.class);
+        intent.putExtra("username",username);
         startActivity(intent);
     }
     public void openHealthActivity(){

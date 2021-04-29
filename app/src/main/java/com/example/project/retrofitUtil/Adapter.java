@@ -20,6 +20,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
     private Context context;
     private RecyclerViewClickListener listener;
 
+
     public Adapter(List<registeredDocs> regDocs, Context context, RecyclerViewClickListener listener) {
         this.regDocs = regDocs;
         this.context = context;
@@ -42,6 +43,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         holder.name.setText(regDocs.get(position).getName());
         holder.address.setText(regDocs.get(position).getAddress());
         holder.qualification.setText(regDocs.get(position).getQualification());
+
+
 
     }
 

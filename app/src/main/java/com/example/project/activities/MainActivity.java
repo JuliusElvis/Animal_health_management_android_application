@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openNewActivity(){
         Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("username",String.valueOf(etUsername.getText()));
         startActivity(intent);
     }
     public void openRegisterActivity(){

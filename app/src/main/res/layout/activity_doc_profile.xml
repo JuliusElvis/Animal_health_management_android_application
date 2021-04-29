@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activities.docProfileActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
     <TextView
         android:id="@+id/nametextView"
         android:layout_width="wrap_content"
@@ -13,4 +18,33 @@
         android:text="TextView"
         tools:layout_editor_absoluteX="199dp"
         tools:layout_editor_absoluteY="327dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/phonetextView"
+        android:text="phone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/localitytextView"
+        android:text="locality"/>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:rating="2"
+        android:stepSize="1"
+        android:progressTint="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/btnRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>

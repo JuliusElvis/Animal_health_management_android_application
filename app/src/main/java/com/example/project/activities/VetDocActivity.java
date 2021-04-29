@@ -11,6 +11,7 @@ import com.example.project.R;
 
 public class VetDocActivity extends AppCompatActivity {
     Button docReg, docDisplay;
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,7 @@ public class VetDocActivity extends AppCompatActivity {
 
         docDisplay = findViewById(R.id.docDisplay);
         docReg = findViewById(R.id.docReg);
+        username = getIntent().getExtras().getString("username");
 
         docDisplay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +37,7 @@ public class VetDocActivity extends AppCompatActivity {
     }
     public void openActivity(){
         Intent intent = new Intent(this,DocDisplayActivity.class);
+        intent.putExtra("username",username);
         startActivity(intent);
     }
     public void openDocRegActivity(){

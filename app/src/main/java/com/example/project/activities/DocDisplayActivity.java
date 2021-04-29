@@ -37,11 +37,13 @@ public class DocDisplayActivity extends AppCompatActivity {
     private ApiInterface apiInterface;
     ProgressBar progressBar;
     private Adapter.RecyclerViewClickListener listener;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_display);
+        username = getIntent().getExtras().getString("username");
 
         setOnClickListener();
         progressBar = findViewById(R.id.progress);
@@ -51,6 +53,7 @@ public class DocDisplayActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
 
+
        fetchUsers("");
     }
 
@@ -58,6 +61,9 @@ public class DocDisplayActivity extends AppCompatActivity {
         listener = (v, position) -> {
             Intent intent = new Intent(this,docProfileActivity.class);
             intent.putExtra("name",regDocs.get(position).getName());
+            intent.putExtra("username",username);
+           // intent.putExtra("phone",String.valueOf(regDocs.get(position).getPhone()));
+            //intent.putExtra("locality",String.valueOf(regDocs.get(position).getLocality()));
             startActivity(intent);
         };
     }
