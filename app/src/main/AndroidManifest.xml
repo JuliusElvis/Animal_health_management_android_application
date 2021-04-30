@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.vetRegInput"></activity>
+        <activity android:name=".activities.diseaseDisplay"></activity>
+        <activity android:name=".activities.vetRegInput" />
         <activity android:name=".activities.docProfileActivity" />
         <activity android:name=".activities.LicenseActivity" />
         <activity android:name=".activities.DocDetailsActivity" />

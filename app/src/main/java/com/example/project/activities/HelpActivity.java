@@ -18,14 +18,6 @@ public class HelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-    btn = findViewById(R.id.btn2);
-
-    btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            openNewActivity();
-        }
-    });
 
     }
     public void openNewActivity(){

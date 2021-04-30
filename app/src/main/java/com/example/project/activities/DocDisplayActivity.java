@@ -8,6 +8,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.example.project.model.registeredDocs;
 import com.example.project.retrofitUtil.APIClient;
 import com.example.project.retrofitUtil.Adapter;
 import com.example.project.retrofitUtil.ApiInterface;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 //import com.example.project.retrofitUtil.myAdapter;
 
 import java.util.List;
@@ -39,6 +41,9 @@ public class DocDisplayActivity extends AppCompatActivity {
     private Adapter.RecyclerViewClickListener listener;
     String username;
 
+    public String defRating = "";
+    String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,14 +59,38 @@ public class DocDisplayActivity extends AppCompatActivity {
 
 
 
+
        fetchUsers("");
     }
-
-    private void setOnClickListener() {
+//was private
+    public void setOnClickListener() {
         listener = (v, position) -> {
             Intent intent = new Intent(this,docProfileActivity.class);
-            intent.putExtra("name",regDocs.get(position).getName());
+
+            name = regDocs.get(position).getName();
+            /*Handler handler = new Handler();
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    String[] field = new String[1];
+                    field[0] = "name";
+                    //Creating array for data
+                    String[] data = new String[1];
+                    data[0] = name;
+
+                    PutData putData = new PutData("http://192.168.100.3/project1/defaultRating.php", "POST", field, data);
+                    if (putData.startPut()) {
+                        if (putData.onComplete()) {
+                            defRating = String.valueOf(putData.getResult());
+                            //Float f1 = Float.parseFloat(defRating);
+                        }}
+                }
+            });*/
+
+
+            intent.putExtra("name",name);
             intent.putExtra("username",username);
+            intent.putExtra("raten",defRating);
            // intent.putExtra("phone",String.valueOf(regDocs.get(position).getPhone()));
             //intent.putExtra("locality",String.valueOf(regDocs.get(position).getLocality()));
             startActivity(intent);
@@ -115,5 +144,25 @@ public class DocDisplayActivity extends AppCompatActivity {
             }
         });
         return true;
+    }
+    public void rator(){
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                String[] field = new String[1];
+                field[0] = "name";
+                //Creating array for data
+                String[] data = new String[1];
+                data[0] = name;
+
+                PutData putData = new PutData("http://192.168.100.3/project1/defaultRating.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        defRating = String.valueOf(putData.getResult());
+                        Float f1 = Float.parseFloat(defRating);
+                    }}
+            }
+        });
     }
 }

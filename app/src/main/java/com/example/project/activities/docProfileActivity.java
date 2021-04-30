@@ -21,6 +21,7 @@ import java.util.List;
 public class docProfileActivity extends AppCompatActivity {
     TextView nametxtView,tvphone,tvlocality;
     String name,phone,locality,username;
+    public String defRating = "";
     Button btnRate;
     RatingBar ratingStars;
     int myRating = 0;
@@ -35,6 +36,9 @@ public class docProfileActivity extends AppCompatActivity {
         tvphone = findViewById(R.id.phonetextView);
         tvlocality = findViewById(R.id.localitytextView);
         username = getIntent().getExtras().getString("username");
+       // phone = getIntent().getExtras().getString("raten");
+        rator();
+        //tvphone.setText(phone);
 
         btnRate = findViewById(R.id.btnRate);
         ratingStars = findViewById(R.id.ratingBar);
@@ -78,7 +82,8 @@ public class docProfileActivity extends AppCompatActivity {
 
         }
         nametxtView.setText(name);
-        //tvphone.setText(phone);
+
+
         //tvlocality.setText(result);
 
         btnRate.setOnClickListener(new View.OnClickListener() {
@@ -105,12 +110,41 @@ public class docProfileActivity extends AppCompatActivity {
                             if (putData.onComplete()) {
                                 String result = String.valueOf(putData.getResult());
                                 tvlocality.setText(result);
+                                Float f = Float.parseFloat(result);
+                                ratingStars.setRating(f);
                             }else{
                                 Toast.makeText(docProfileActivity.this,"Not successful",Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
                 });
+            }
+        });
+    }
+    public void rator(){
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                String[] field = new String[1];
+                field[0] = "name";
+                //Creating array for data
+                String[] data = new String[1];
+                data[0] = name;
+
+                PutData putData = new PutData("http://192.168.100.3/project1/defaultRating.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        defRating = String.valueOf(putData.getResult());
+                        if (defRating.equals("not yet rated")){
+                            tvphone.setText("not rated");
+                        }else {
+                            float f1 = Float.parseFloat(defRating);
+                            ratingStars.setRating(f1);
+                            tvphone.setText(defRating);
+                        }
+
+                    }}
             }
         });
     }

@@ -8,10 +8,45 @@
     tools:context=".activities.HelpActivity">
 
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Button"
-        android:id="@+id/btn2"/>
+        android:text="Rate Us"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/rateus"/>
+    <View
+        android:layout_width="410dp"
+        android:layout_height="2dp"
+        android:background="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Password"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/resetpass"/>
+    <View
+        android:layout_width="410dp"
+        android:layout_height="2dp"
+        android:background="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/help"/>
+    <View
+        android:layout_width="410dp"
+        android:layout_height="2dp"
+        android:background="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/logout"/>
+
 </LinearLayout>
