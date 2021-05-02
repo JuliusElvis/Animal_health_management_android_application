@@ -13,7 +13,7 @@
         android:id="@+id/ratingBar"
         android:numStars="5"
         android:rating="2"
-        android:stepSize="1"
+        android:stepSize="0.5"
         android:progressTint="@color/colorPrimary"/>
 
     <TextView
@@ -25,13 +25,19 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Review"
-        android:id="@+id/review" />
+        android:hint="Review"
+        android:id="@+id/etreview" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Post"
         android:id="@+id/btnReview"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App rating"
+        android:textStyle="bold"
+        android:id="@+id/apprating"/>
 
 </LinearLayout>

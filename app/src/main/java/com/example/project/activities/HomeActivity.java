@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void openHelpActivity(){
         Intent intent = new Intent(this, HelpActivity.class);
+        intent.putExtra("username",username);
         startActivity(intent);
     }
     public void openCalendarActivity(){

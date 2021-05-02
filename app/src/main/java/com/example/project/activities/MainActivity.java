@@ -91,7 +91,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    int counter = 0;
 
+    @Override
+    public void onBackPressed() {
+        counter++;
+        if (counter == 2)
+        super.onBackPressed();
+
+    }
 
     public void openNewActivity(){
         Intent intent = new Intent(this, HomeActivity.class);
