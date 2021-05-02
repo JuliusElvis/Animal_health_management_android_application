@@ -1,10 +1,13 @@
 package com.example.project.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -12,7 +15,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project.R;
+import com.example.project.model.reviews;
+import com.example.project.retrofitUtil.APIClient;
+import com.example.project.retrofitUtil.ApiInterface;
+import com.example.project.retrofitUtil.reviewAdapter;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class appRating extends AppCompatActivity {
 
@@ -22,7 +35,14 @@ public class appRating extends AppCompatActivity {
     Button btnPost;
     String username;
     public String defRating = "";
-    TextView appRating;
+    TextView apppRating;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private List<reviews> fetchedReviews;
+    private reviewAdapter adapter;
+    private ApiInterface apiInterface;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +54,13 @@ public class appRating extends AppCompatActivity {
         btnPost = findViewById(R.id.btnReview);
         username = getIntent().getExtras().getString("username");
 
-        appRating = findViewById(R.id.apprating);
+        recyclerView = findViewById(R.id.recycler1);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
+
+        apppRating = findViewById(R.id.apprating);
         rator();
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -101,7 +127,32 @@ public class appRating extends AppCompatActivity {
                 });
             }
         });
+        fetchReviews();
     }
+    public void fetchReviews(){
+        apiInterface = APIClient.getApiClient().create(ApiInterface.class);
+        Call<List<reviews>> call = apiInterface.getReviews();
+        call.enqueue(new Callback<List<reviews>>() {
+            @Override
+            public void onResponse(Call<List<reviews>> call, Response<List<reviews>> response) {
+                fetchedReviews = response.body();
+                adapter = new reviewAdapter(fetchedReviews, appRating.this);
+                recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<reviews>> call, Throwable t) {
+                Toast.makeText(appRating.this,"Error on" + t.toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+
+
+
     public void rator(){
         Handler handler = new Handler();
         handler.post(new Runnable() {
@@ -119,7 +170,7 @@ public class appRating extends AppCompatActivity {
                         defRating = String.valueOf(putData.getResult());
                             float f1 = Float.parseFloat(defRating);
                             ratingBar.setRating(f1);
-                            appRating.setText(defRating);
+                            apppRating.setText(defRating);
 
                     }}
             }
