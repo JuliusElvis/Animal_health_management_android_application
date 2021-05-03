@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.project.EmailActivity;
 import com.example.project.R;
 
 public class HelpActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class HelpActivity extends AppCompatActivity {
     Button btn;
     TextView logout,rateus,help,passreset;
     String username;
+    TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,9 @@ public class HelpActivity extends AppCompatActivity {
         passreset =findViewById(R.id.resetpass);
         username = getIntent().getExtras().getString("username");
 
+        tv1 = findViewById(R.id.tvusername);
+        tv1.setText(username);
+
         rateus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +40,14 @@ public class HelpActivity extends AppCompatActivity {
             }
         });
 
-        logoutMethod();
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEmailActivity();
+            }
+        });
+
+        //logoutMethod();
 
 
 
@@ -57,9 +69,11 @@ public class HelpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //logout();
-                
-
             }
         });
+    }
+    public void openEmailActivity(){
+        Intent intent = new Intent(this, EmailActivity.class);
+        startActivity(intent);
     }
 }
