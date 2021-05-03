@@ -21,7 +21,7 @@ public class DocDetailsActivity extends AppCompatActivity {
     EditText etphoneNo,etLocality;
     Button regVet;
     String reg;
-    TextView tv20;
+    TextView vetname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,11 @@ public class DocDetailsActivity extends AppCompatActivity {
 
         etphoneNo = findViewById(R.id.phoneNo);
         regVet = findViewById(R.id.registerButton);
+        vetname = findViewById(R.id.vetName);
 
         etLocality = findViewById(R.id.locality);
          reg = Objects.requireNonNull(getIntent().getExtras()).getString("reg_no");
+         vetName();
 
         regVet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,5 +98,27 @@ public class DocDetailsActivity extends AppCompatActivity {
     public void openNewActivity(){
         Intent intent = new Intent(this, DocDisplayActivity.class);
         startActivity(intent);
+    }
+    public void vetName(){
+        final String reg_no;
+        reg_no = String.valueOf(reg);
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                String[] field = new String[1];
+                field[0] = "reg_no";
+                String[] data = new String[1];
+                data[0] = reg_no;
+
+                PutData putData = new PutData("http://192.168.100.3/project1/vetName.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        String result = String.valueOf(putData.getResult());
+                        vetname.setText(result);
+                    }
+                }
+            }
+        });
     }
 }
