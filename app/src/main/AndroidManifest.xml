@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EmailActivity"></activity>
+        <activity android:name=".admin.DeleteRecord"></activity>
+        <activity android:name=".admin.AdminActivity" />
+        <activity android:name=".EmailActivity" />
         <activity android:name=".activities.appRating" />
         <activity android:name=".activities.diseaseDisplay" />
         <activity android:name=".activities.vetRegInput" />
