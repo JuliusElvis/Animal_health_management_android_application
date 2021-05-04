@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project.R;
+import com.example.project.admin.AdminActivity;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class MainActivity extends AppCompatActivity {
@@ -65,7 +66,10 @@ public class MainActivity extends AppCompatActivity {
                                     if (result.equals("Login Success")) {
                                         openNewActivity();
                                         finish();
-                                    } else {
+                                    } else if (username.equals("admin")){
+                                        checkAdmin();
+                                    }
+                                    else {
                                         Toast.makeText(getApplicationContext(), "Log in failed", Toast.LENGTH_SHORT).show();
                                     }
 
@@ -110,6 +114,42 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,RegisterActivity.class);
         startActivity(intent);
     }
+    public void openAdminActivity(){
+        Intent intent = new Intent(this, AdminActivity.class);
+        startActivity(intent);
+    }
 
+    public void checkAdmin() {
+        final String password, username;
 
+        username = String.valueOf(etUsername.getText());
+        password = String.valueOf(etPassword.getText());
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                //Starting Write and Read data with URL
+                //Creating array for parameters
+                String[] field = new String[2];
+                field[0] = "username";
+                field[1] = "password";
+                //Creating array for data
+                String[] data = new String[2];
+                data[0] = username;
+                data[1] = password;
+
+                PutData putData = new PutData("http://192.168.100.3/project1/adminLogin.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        String result = putData.getResult();
+                        if (result.equals("Admin Login Success")) {
+                            openAdminActivity();
+                            finish();
+                        }
+                    }
+                }
+            }
+        });
+    }
 }
