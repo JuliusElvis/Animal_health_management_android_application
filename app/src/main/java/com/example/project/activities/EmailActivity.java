@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.project.R;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;

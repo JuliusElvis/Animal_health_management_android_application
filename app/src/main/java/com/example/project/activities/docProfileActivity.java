@@ -19,8 +19,8 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 import java.util.List;
 
 public class docProfileActivity extends AppCompatActivity {
-    TextView nametxtView,tvphone,tvlocality;
-    String name,phone,locality,username;
+    TextView nametxtView,tvrating,tvphone,tvlocality;
+    String name,phoneno,locality,username;
     public String defRating = "";
     Button btnRate;
     RatingBar ratingStars;
@@ -33,11 +33,14 @@ public class docProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doc_profile);
 
         nametxtView = findViewById(R.id.nametextView);
-        tvphone = findViewById(R.id.phonetextView);
+        tvrating = findViewById(R.id.ratingtv);
         tvlocality = findViewById(R.id.localitytextView);
+        tvphone = findViewById(R.id.phonetv);
         username = getIntent().getExtras().getString("username");
        // phone = getIntent().getExtras().getString("raten");
         rator();
+        phoney();
+        loc();
         //tvphone.setText(phone);
 
         btnRate = findViewById(R.id.btnRate);
@@ -109,7 +112,7 @@ public class docProfileActivity extends AppCompatActivity {
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
                                 String result = String.valueOf(putData.getResult());
-                                tvlocality.setText(result);
+                                //tvlocality.setText(result);
                                 Float f = Float.parseFloat(result);
                                 ratingStars.setRating(f);
                             }else{
@@ -137,15 +140,74 @@ public class docProfileActivity extends AppCompatActivity {
                     if (putData.onComplete()) {
                         defRating = String.valueOf(putData.getResult());
                         if (defRating.equals("not yet rated")){
-                            tvphone.setText("not rated");
+                            tvrating.setText("not rated");
                         }else {
                             float f1 = Float.parseFloat(defRating);
                             ratingStars.setRating(f1);
-                            tvphone.setText(defRating);
+                            tvrating.setText(defRating);
                         }
 
                     }}
             }
         });
+    }
+
+    public void phoney(){
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                String[] field = new String[1];
+                field[0] = "name";
+                //Creating array for data
+                String[] data = new String[1];
+                data[0] = name;
+
+                PutData putData = new PutData("http://192.168.100.3/project1/getPhone.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        phoneno = String.valueOf(putData.getResult());
+                        if (!phoneno.equals("")){
+                            tvphone.setText(phoneno);
+                        }else{
+                            tvphone.setText(getResources().getString(R.string.Phone));
+                        }
+
+                        }
+
+                    }}
+            });
+
+    }
+
+    public void loc(){
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                String[] field = new String[1];
+                field[0] = "name";
+                //Creating array for data
+                String[] data = new String[1];
+                data[0] = name;
+
+                PutData putData = new PutData("http://192.168.100.3/project1/getLoc.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        locality = String.valueOf(putData.getResult());
+                        if (!locality.equals("")){
+                            tvlocality.setText(locality);
+                        }else{
+                            tvlocality.setText(getResources().getString(R.string.locality));
+                        }
+
+
+                    }
+
+                }}
+        });
+
     }
 }

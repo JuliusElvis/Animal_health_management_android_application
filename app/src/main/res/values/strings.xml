@@ -72,6 +72,9 @@
     <string name="swineInfluenza">SwineInfluenza Vaccine:</string>
     <string name="glassersVaccine">Glassers Vaccine:</string>
 
+    <string name="Phone">Phone</string>
+    <string name="locality">Kenya</string>
+
 
     <string name="heading">Enter animal details to generate list of health maintenance practices</string>
 

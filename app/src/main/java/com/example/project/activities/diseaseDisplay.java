@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.project.R;
 
 public class diseaseDisplay extends AppCompatActivity {
 
-    TextView disease;
+    TextView disease,doc;
     String disease1;
 
     @Override
@@ -22,7 +23,10 @@ public class diseaseDisplay extends AppCompatActivity {
         disease1 = getIntent().getExtras().getString("disease");
         disease.setText(disease1);
 
-
-
     }
+
+    /*public void openDoc(){
+        Intent intent = new Intent(this, DocDisplayActivity.class);
+        startActivity(intent);
+    }*/
 }

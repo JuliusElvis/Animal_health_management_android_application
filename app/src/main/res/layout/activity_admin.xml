@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="View emails"
+        android:id="@+id/emails"
         android:textSize="20dp"
         android:textStyle="bold" />
     <View
@@ -65,6 +66,19 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="Add doctor"
+        android:id="@+id/addDoc"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="Change Password"
+        android:id="@+id/changePass"
         android:textSize="20dp"
         android:textStyle="bold" />
     <View

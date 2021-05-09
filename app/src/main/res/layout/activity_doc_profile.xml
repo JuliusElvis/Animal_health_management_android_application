@@ -21,13 +21,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/phonetextView"
-        android:text="phone"/>
+        android:id="@+id/ratingtv"
+        android:text="Rating"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/localitytextView"
         android:text="locality"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phonetv"
+            android:text="Phone"/>
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +46,7 @@
             android:id="@+id/btnRate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Rate" />
 
 
     </LinearLayout>
