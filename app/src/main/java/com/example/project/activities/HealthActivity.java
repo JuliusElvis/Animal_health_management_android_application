@@ -31,7 +31,7 @@ public class HealthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_health);
         btnHealth = findViewById(R.id.button2);
         progressBar = findViewById(R.id.progressbar);
-        progressBar.setVisibility(View.GONE);
+       // progressBar.setVisibility(View.GONE);
         t1 = findViewById(R.id.dis);
         checkBoxes();
 
@@ -52,11 +52,10 @@ public class HealthActivity extends AppCompatActivity {
                         !ch7.isChecked()&&!ch8.isChecked()&&!ch9.isChecked()&&!ch10.isChecked()&&!ch11.isChecked()&&!ch12.isChecked()&&
                         !ch13.isChecked()&&!ch14.isChecked()&&!ch15.isChecked()&&!ch16.isChecked()&&!ch17.isChecked()&&!ch18.isChecked()&&
                         !ch19.isChecked()){
-                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(HealthActivity.this,"You did not select any symptom",Toast.LENGTH_SHORT).show();
                 }else {
-                    checkBox1();
                     progressBar.setVisibility(View.VISIBLE);
+                    checkBox1();
                     PyObject obj = pyObject.callAttr("main",st1,st2,st3,st4,st5,st6,st7,st8,st9,st10,st11,st12,st13,st14,
                            st15,st16,st17,st18,st19);
                    //t1.setText(obj.toString());
