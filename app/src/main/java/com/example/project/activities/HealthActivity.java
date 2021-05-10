@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +16,7 @@ import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.example.project.R;
+import com.example.project.model.Dialog;
 
 public class HealthActivity extends AppCompatActivity {
     public CheckBox ch1,ch2,ch3,ch4,ch5,ch6,ch7,ch8,ch9,ch10,ch11,ch12,ch13,ch14,ch15,ch16,ch17,ch18,ch19;
@@ -23,16 +25,16 @@ public class HealthActivity extends AppCompatActivity {
     public String st1="",st2 = "",st3 = "",st4 ="",st5 ="",st6 = "",st7="",st8 = "",st9 = "",st10 = "",st11= "",
             st12 = "",st13 = "",st14 = "",st15 = "",st16 = "",st17 = "",st18 = "",st19 = "";
     String disease = "";
-    ProgressBar progressBar;
+    //ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
         btnHealth = findViewById(R.id.button2);
-        progressBar = findViewById(R.id.progressbar);
        // progressBar.setVisibility(View.GONE);
         t1 = findViewById(R.id.dis);
+        final Dialog dialog = new Dialog(HealthActivity.this);
         checkBoxes();
 
         //this starts python
@@ -54,19 +56,27 @@ public class HealthActivity extends AppCompatActivity {
                         !ch19.isChecked()){
                     Toast.makeText(HealthActivity.this,"You did not select any symptom",Toast.LENGTH_SHORT).show();
                 }else {
-                    progressBar.setVisibility(View.VISIBLE);
-                    checkBox1();
-                    PyObject obj = pyObject.callAttr("main",st1,st2,st3,st4,st5,st6,st7,st8,st9,st10,st11,st12,st13,st14,
-                           st15,st16,st17,st18,st19);
-                   //t1.setText(obj.toString());
-                    //PyObject obj = pyObject.callAttr("main",st1);
-                    disease = obj.toString();
-                    t1.setText(disease);
-                    progressBar.setVisibility(View.GONE);
-                    openActivity();
+                    //ProgressBar progressBar = findViewById(R.id.progressbar);
+                    //progressBar.setVisibility(View.VISIBLE);
+                    dialog.startLoadingDialog();
+                    Handler handler = new Handler();
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(HealthActivity.this,"Seen",Toast.LENGTH_SHORT).show();
+                            checkBox1();
+                            PyObject obj = pyObject.callAttr("main",st1,st2,st3,st4,st5,st6,st7,st8,st9,st10,st11,st12,st13,st14,
+                                    st15,st16,st17,st18,st19);
+                            //t1.setText(obj.toString());
+                            //PyObject obj = pyObject.callAttr("main",st1);
+                            disease = obj.toString();
+                            t1.setText(disease);
+                            openActivity();
+                        }
+                    });
+                    //dialog.dismissDialog();
 
-
-
+                    //progressBar.setVisibility(View.GONE);
                 }
             }
         });
