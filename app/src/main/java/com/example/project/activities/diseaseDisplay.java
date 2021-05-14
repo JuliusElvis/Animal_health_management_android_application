@@ -12,7 +12,7 @@ import com.example.project.R;
 public class diseaseDisplay extends AppCompatActivity {
 
     TextView disease,doc;
-    String disease1;
+    String disease1,username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class diseaseDisplay extends AppCompatActivity {
 
         disease = findViewById(R.id.dis);
         disease1 = getIntent().getExtras().getString("disease");
+        username = getIntent().getExtras().getString("username");
         disease.setText(disease1);
 
     }
@@ -29,4 +30,12 @@ public class diseaseDisplay extends AppCompatActivity {
         Intent intent = new Intent(this, DocDisplayActivity.class);
         startActivity(intent);
     }*/
+
+    public void onBackPressed(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("username",username);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        finish();
+        startActivity(intent);
+    }
 }

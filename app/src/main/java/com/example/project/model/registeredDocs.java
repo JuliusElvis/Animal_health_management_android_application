@@ -3,7 +3,7 @@ package com.example.project.model;
 import com.google.gson.annotations.SerializedName;
 
 public class registeredDocs {
-    @SerializedName("id") private int id;
+
     @SerializedName("name") private String name;
     @SerializedName("address") private String address;
     @SerializedName("qualification") private String qualification;
@@ -11,9 +11,6 @@ public class registeredDocs {
     //@SerializedName("locality") private String locality;
 
 
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;

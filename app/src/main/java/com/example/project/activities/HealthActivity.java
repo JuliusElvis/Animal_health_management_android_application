@@ -25,6 +25,7 @@ public class HealthActivity extends AppCompatActivity {
     public String st1="",st2 = "",st3 = "",st4 ="",st5 ="",st6 = "",st7="",st8 = "",st9 = "",st10 = "",st11= "",
             st12 = "",st13 = "",st14 = "",st15 = "",st16 = "",st17 = "",st18 = "",st19 = "";
     String disease = "";
+    String username;
     //ProgressBar progressBar;
 
     @Override
@@ -34,6 +35,7 @@ public class HealthActivity extends AppCompatActivity {
         btnHealth = findViewById(R.id.button2);
        // progressBar.setVisibility(View.GONE);
         t1 = findViewById(R.id.dis);
+        username = getIntent().getExtras().getString("username");
         final Dialog dialog = new Dialog(HealthActivity.this);
         checkBoxes();
 
@@ -85,6 +87,7 @@ public class HealthActivity extends AppCompatActivity {
     public void openActivity(){
         Intent intent = new Intent(this, diseaseDisplay.class);
         intent.putExtra("disease",disease);
+        intent.putExtra("username",username);
         startActivity(intent);
     }
 

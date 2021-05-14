@@ -22,7 +22,9 @@
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Check all boxes with visible symptoms" />
+                android:text="Check all boxes with visible symptoms"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
 
             <CheckBox
                 android:id="@+id/checkBox"

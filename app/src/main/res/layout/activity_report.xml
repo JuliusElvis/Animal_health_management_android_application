@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".activities.ReportActivity">
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:padding="10dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,6 +23,11 @@
         android:textStyle="bold"
         android:textColor="@color/Black"
         android:id="@+id/textView"/>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
 
     <TextView
         android:layout_width="match_parent"
@@ -25,6 +37,10 @@
         android:textStyle="bold"
         android:textColor="@color/Black"
         android:id="@+id/textView2"/>
+   <View
+    android:layout_width="match_parent"
+    android:layout_height="1.5dp"
+    android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +49,11 @@
         android:textStyle="bold"
         android:textColor="@color/Black"
         android:id="@+id/textView3"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +62,10 @@
         android:textStyle="bold"
         android:textColor="@color/Black"
         android:id="@+id/textView4"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,6 +73,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView5"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,6 +84,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView6"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,6 +95,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView10"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +106,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView11"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,6 +117,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView12"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,6 +128,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView7"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,6 +139,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView8"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,6 +150,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView9"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,6 +161,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView13"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,6 +172,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView14"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,6 +183,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView15"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,6 +194,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView16"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -132,6 +205,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView17"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -139,6 +216,10 @@
         android:textSize="22sp"
         android:textColor="@color/Black"
         android:id="@+id/textView18"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="?android:attr/listDivider" />
 
     <Button
         android:id="@+id/button"
@@ -147,6 +228,8 @@
         android:text="Download report"
         android:background="@color/green"/>
 
+ </LinearLayout>
 
 
-</LinearLayout>
+
+</ScrollView>

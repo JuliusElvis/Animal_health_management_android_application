@@ -15,11 +15,13 @@ import android.widget.Toast;
 
 import com.example.project.R;
 import com.example.project.admin.AdminActivity;
+import com.example.project.resetPass.EmailPassActivity;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class MainActivity extends AppCompatActivity {
     Button loginBtn;
     EditText etUsername,etPassword;
+    TextView tv1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +96,13 @@ public class MainActivity extends AppCompatActivity {
                 openRegisterActivity();
             }
         });
+
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPasswordActivity();
+            }
+        });
     }
     int counter = 0;
 
@@ -112,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openRegisterActivity(){
         Intent intent = new Intent(this,RegisterActivity.class);
+        startActivity(intent);
+    }
+    public void openPasswordActivity(){
+        Intent intent = new Intent(this, EmailPassActivity.class);
         startActivity(intent);
     }
     public void openAdminActivity(){

@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void openHealthActivity(){
         Intent intent = new Intent(this, HealthActivity.class);
+        intent.putExtra("username",username);
         startActivity(intent);
     }
     public void openHelpActivity(){

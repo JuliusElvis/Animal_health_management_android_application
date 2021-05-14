@@ -17,7 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".admin.ChangePassword"></activity>
+        <activity android:name=".resetPass.PassActivity"></activity>
+        <activity android:name=".resetPass.CodeActivity" />
+        <activity android:name=".resetPass.EmailPassActivity" />
+        <activity android:name=".admin.ChangePassword" />
         <activity android:name=".admin.mailActivity" />
         <activity android:name=".admin.AddRecord" />
         <activity android:name=".admin.DeleteRecord" />

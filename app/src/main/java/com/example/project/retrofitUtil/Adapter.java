@@ -39,7 +39,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
     @Override
     public void onBindViewHolder( MyViewHolder holder, int position) {
 
-        holder.id.setText(String.valueOf(regDocs.get(position).getId()));
         holder.name.setText(regDocs.get(position).getName());
         holder.address.setText(regDocs.get(position).getAddress());
         holder.qualification.setText(regDocs.get(position).getQualification());
@@ -59,7 +58,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            id = itemView.findViewById(R.id.idUser);
+
             name = itemView.findViewById(R.id.name);
             address = itemView.findViewById(R.id.address);
             qualification = itemView.findViewById(R.id.qualification);

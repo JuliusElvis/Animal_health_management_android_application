@@ -76,7 +76,7 @@
     <string name="locality">Kenya</string>
 
 
-    <string name="heading">Enter animal details to generate list of health maintenance practices</string>
+    <string name="heading">ANIMAL DETAILS</string>
 
     <string-array name="animalName">
         <item>Cow</item>
