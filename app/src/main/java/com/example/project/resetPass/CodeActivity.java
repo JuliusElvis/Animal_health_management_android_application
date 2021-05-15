@@ -30,8 +30,8 @@ public class CodeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String email,verif_code;
-                email = String.valueOf(email2.getText());
-                verif_code = String.valueOf(code.getText());
+                email = String.valueOf(email2.getText()).trim();
+                verif_code = String.valueOf(code.getText()).trim();
 
                 if (!email.equals("") && !verif_code.equals("")){
                     Handler handler = new Handler();

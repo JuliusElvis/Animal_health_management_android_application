@@ -8,5 +8,8 @@
     <color name="green">#00FF00</color>
     <color name="purple">#6A0DAD</color>
     <color name="red">#ff0000</color>
-    <color name="pink">#E73895</color>
+    <color name="pink">#E73895</color>1
+    <color name="green1">#2ecc71</color>
+    <color name="green2">#186a3b</color>
+    <color name="green3"> #239b56 </color>
 </resources>

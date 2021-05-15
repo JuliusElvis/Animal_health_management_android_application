@@ -31,7 +31,7 @@ public class vetRegInput extends AppCompatActivity {
         sendReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reg_no = String.valueOf(regNo.getText());
+                reg_no = String.valueOf(regNo.getText()).trim();
                 if (!reg_no.equals("")){
                     Handler handler = new Handler();
                     handler.post(new Runnable() {

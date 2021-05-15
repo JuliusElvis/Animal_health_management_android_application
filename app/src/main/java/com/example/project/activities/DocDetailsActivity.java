@@ -13,12 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.util.Objects;
 
 public class DocDetailsActivity extends AppCompatActivity {
-    EditText etphoneNo,etLocality;
+    TextInputEditText etphoneNo,etLocality;
     Button regVet;
     String reg;
     TextView vetname;

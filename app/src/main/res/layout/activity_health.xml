@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:text="Check all boxes with visible symptoms"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColor="@color/green2"/>
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -145,7 +145,8 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Scan for disease" />
+                android:text="Scan for disease"
+                android:background="@color/green2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

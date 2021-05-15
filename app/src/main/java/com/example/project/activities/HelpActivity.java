@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.project.R;
+import com.example.project.resetPass.EmailPassActivity;
 
 public class HelpActivity extends AppCompatActivity {
 
@@ -46,6 +47,19 @@ public class HelpActivity extends AppCompatActivity {
         });
 
         //logoutMethod();
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
+
+        passreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               passReset();
+            }
+        });
 
 
 
@@ -60,6 +74,7 @@ public class HelpActivity extends AppCompatActivity {
     public void logout(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void logoutMethod(){
@@ -73,5 +88,11 @@ public class HelpActivity extends AppCompatActivity {
     public void openEmailActivity(){
         Intent intent = new Intent(this, EmailActivity.class);
         startActivity(intent);
+    }
+
+    public void passReset(){
+        Intent intent = new Intent(this, EmailPassActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

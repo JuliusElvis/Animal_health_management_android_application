@@ -34,7 +34,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1.5dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/green2" />
 
     <TextView
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
     <View
     android:layout_width="match_parent"
     android:layout_height="1.5dp"
-    android:background="?android:attr/listDivider" />
+        android:background="@color/green2" />
 
     <TextView
         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1.5dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/green2" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1.5dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/green2" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,5 +81,10 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:id="@+id/logout"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green2" />
 
 </LinearLayout>

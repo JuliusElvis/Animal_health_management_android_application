@@ -13,7 +13,7 @@ import com.example.project.activities.MainActivity;
 public class AdminActivity extends AppCompatActivity {
 
     TextView deleteRec;
-    TextView addRec,vemails,changePass;
+    TextView addRec,vemails,changePass,addAdm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,14 @@ public class AdminActivity extends AppCompatActivity {
         addRec = findViewById(R.id.addDoc);
         vemails = findViewById(R.id.emails);
         changePass = findViewById(R.id.changePass);
+        addAdm = findViewById(R.id.addAdmin);
+
+        addAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addAdmin();
+            }
+        });
 
         addRec.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +79,10 @@ public class AdminActivity extends AppCompatActivity {
     }
     public void changePass(){
         Intent intent = new Intent(this, ChangePassword.class);
+        startActivity(intent);
+    }
+    public void addAdmin(){
+        Intent intent = new Intent(this, AddAdmin.class);
         startActivity(intent);
     }
 }

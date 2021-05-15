@@ -19,10 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"
         android:text="@string/heading"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textColor="@color/Black"/>
     </LinearLayout>
 
     <LinearLayout
@@ -30,23 +31,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cowName"
-            android:textSize="22sp"
-            android:textColor="@color/purple"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cowname"
-            android:hint="@string/cowNameHint"/>
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cowname"
+                android:hint="@string/cowNameHint" />
+
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/typeOfAnimal"
             android:textSize="22sp"
-            android:textColor="@color/purple"/>
+            android:textColor="#a8ebe7"/>
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
@@ -62,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="Gender"
             android:textSize="22sp"
-            android:textColor="@color/purple"/>
+            android:textColor="#71cce1"/>
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,7 +91,7 @@
             android:layout_height="wrap_content"
             android:text="Animal Date of Birth"
             android:textSize="22sp"
-            android:textColor="@color/purple"/>
+            android:textColor="#a8ebe7"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,9 +108,9 @@
             android:id="@+id/BtnReport"
             android:text="Generate vaccination calendar"
             android:textSize="22sp"
-            android:textColor="@color/purple"
+            android:textColor="@color/Black"
             android:enabled="false"
-            android:background="@color/green"/>
+            android:background="@color/green2"/>
 
 
     </LinearLayout>

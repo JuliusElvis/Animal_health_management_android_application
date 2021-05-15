@@ -15,11 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class RegisterActivity extends AppCompatActivity {
     Button btnReg;
-    EditText etFullname,etUsername,etEmail,etPassword,etConfirmPass;
+    TextInputEditText etFullname,etUsername,etEmail,etPassword,etConfirmPass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +41,11 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String fullname, username, password, email, confPass;
 
-                fullname = String.valueOf(etFullname.getText());
-                username = String.valueOf(etUsername.getText());
-                password = String.valueOf(etPassword.getText());
-                email = String.valueOf(etEmail.getText());
-                confPass = String.valueOf(etConfirmPass.getText());
+                fullname = String.valueOf(etFullname.getText()).trim();
+                username = String.valueOf(etUsername.getText()).trim();
+                password = String.valueOf(etPassword.getText()).trim();
+                email = String.valueOf(etEmail.getText()).trim();
+                confPass = String.valueOf(etConfirmPass.getText()).trim();
 
                 if (!fullname.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) {
                     if (password.equals(confPass)) {

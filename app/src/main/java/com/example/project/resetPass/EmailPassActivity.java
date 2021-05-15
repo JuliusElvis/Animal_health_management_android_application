@@ -30,7 +30,7 @@ public class EmailPassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String email;
-                email = String.valueOf(email1.getText());
+                email = String.valueOf(email1.getText()).trim();
 
                 if (!email.equals("")){
                     Handler handler = new Handler();

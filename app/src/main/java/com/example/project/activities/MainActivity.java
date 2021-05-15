@@ -16,12 +16,14 @@ import android.widget.Toast;
 import com.example.project.R;
 import com.example.project.admin.AdminActivity;
 import com.example.project.resetPass.EmailPassActivity;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class MainActivity extends AppCompatActivity {
     Button loginBtn;
-    EditText etUsername,etPassword;
-    TextView tv1;
+    //EditText ;
+    TextInputEditText etUsername,etPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String password, username;
 
-                username = String.valueOf(etUsername.getText());
-                password = String.valueOf(etPassword.getText());
+                username = String.valueOf(etUsername.getText()).trim();
+                password = String.valueOf(etPassword.getText()).trim();
 
                 if (!username.equals("") && !password.equals("")) {
                     //Start ProgressBar first (Set visibility VISIBLE)

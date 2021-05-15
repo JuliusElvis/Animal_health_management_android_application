@@ -5,8 +5,8 @@
     <string name="UserName">Username</string>
     <string name="UsernameHint">James Bond</string>
     <string name="Emailhint">jamesbond@gmail.com</string>
-    <string name="PasswordHint">6-8 characters</string>
-    <string name="cowNameHint">Cow1</string>
+    <string name="PasswordHint">Password</string>
+    <string name="cowNameHint">Cow Name</string>
     <string name="Password">Password</string>
     <string name="ConfirmPassword">Confirm Password</string>
     <string name="Login">Log in</string>
