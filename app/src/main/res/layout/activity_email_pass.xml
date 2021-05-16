@@ -5,18 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="40dp"
     tools:context=".resetPass.EmailPassActivity">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
-        android:id="@+id/vrfemail"
-        android:hint="enter email"/>
+        android:text="Enter your email to generate verification code"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/vrfemail"
+            android:hint="enter email"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/buttonVrfEmail"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:background="@color/green2"
+        android:layout_marginStart="100dp"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:text="Verify email" />
 

@@ -4,7 +4,7 @@
     <string name="LivestockManager">Livestock Manager</string>
     <string name="UserName">Username</string>
     <string name="UsernameHint">James Bond</string>
-    <string name="Emailhint">jamesbond@gmail.com</string>
+    <string name="Emailhint">youremail@gmail.com</string>
     <string name="PasswordHint">Password</string>
     <string name="cowNameHint">Cow Name</string>
     <string name="Password">Password</string>

@@ -12,4 +12,6 @@
     <color name="green1">#2ecc71</color>
     <color name="green2">#186a3b</color>
     <color name="green3"> #239b56 </color>
+    <color name="lightblack">#1b2631</color>
+    <color name="white">#fdfefe</color>
 </resources>

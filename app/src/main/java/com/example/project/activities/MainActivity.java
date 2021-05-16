@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
                                     //End ProgressBar (Set visibility to GONE)
                                     Log.i("PutData", result);
+                                }else {
+                                    Toast.makeText(getApplicationContext(), "Log in failed", Toast.LENGTH_SHORT).show();
                                 }
                             }
                             //End Write and Read data with URL

@@ -21,6 +21,7 @@ import com.example.project.retrofitUtil.ApiInterface;
 import com.example.project.retrofitUtil.reviewAdapter;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import retrofit2.Call;
@@ -170,7 +171,9 @@ public class appRating extends AppCompatActivity {
                         defRating = String.valueOf(putData.getResult());
                             float f1 = Float.parseFloat(defRating);
                             ratingBar.setRating(f1);
-                            apppRating.setText(defRating);
+                        DecimalFormat df =new DecimalFormat("###.##");
+                        String s2 = String.valueOf(df.format(f1));
+                            apppRating.setText(s2);
 
                     }}
             }

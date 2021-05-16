@@ -58,6 +58,7 @@ public class AddAdmin extends AppCompatActivity {
                                     if (putData.onComplete()) {
                                         String result = putData.getResult();
                                         if (result.equals("Admin added successfuly")){
+                                            Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
                                             openAdminActivity();
                                             finish();
                                         }else {

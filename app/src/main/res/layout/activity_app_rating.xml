@@ -7,6 +7,32 @@
     android:orientation="vertical"
     tools:context=".activities.appRating">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ratings and reviews"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/green2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App rating"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:id="@+id/apprating"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click to rate"
+        android:textStyle="bold"/>
+
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +40,8 @@
         android:numStars="5"
         android:rating="2"
         android:stepSize="0.5"
-        android:progressTint="@color/colorPrimary"/>
+        android:progressTint="@color/green1"/>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -29,16 +56,14 @@
         android:id="@+id/etreview" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:background="@color/green2"
         android:text="Post"
+        android:textColor="@color/white"
         android:id="@+id/btnReview"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="App rating"
-        android:textStyle="bold"
-        android:id="@+id/apprating"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

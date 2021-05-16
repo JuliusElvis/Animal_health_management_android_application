@@ -35,13 +35,14 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="password">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:hint="password"
+                    android:padding="12dp"
                     android:id="@+id/passwordEt" />
 
             </com.google.android.material.textfield.TextInputLayout>

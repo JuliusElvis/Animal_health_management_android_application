@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.project.R;
+import com.example.project.resetPass.PassActivity;
+import com.google.android.material.textfield.TextInputEditText;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -22,7 +27,8 @@ import java.util.Properties;
 
 public class EmailActivity extends AppCompatActivity {
 
-    EditText etSubject, etMessage;
+    EditText etMessage;
+    TextInputEditText etSubject;
     Button sendmail;
 
 
@@ -44,7 +50,7 @@ public class EmailActivity extends AppCompatActivity {
 
     }
     private void sendmail(){
-        String recMail = "ngaregajn@gmail.com";
+        String recMail = "juliuselvis56@gmail.com";
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_EMAIL,new String[]{recMail});
         intent.putExtra(Intent.EXTRA_SUBJECT,etSubject.getText().toString());

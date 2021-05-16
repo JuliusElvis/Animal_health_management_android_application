@@ -12,10 +12,11 @@ import android.widget.Toast;
 
 import com.example.project.R;
 import com.example.project.activities.diseaseDisplay;
+import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class EmailPassActivity extends AppCompatActivity {
-    EditText email1;
+    TextInputEditText email1;
     Button bt1;
 
     @Override

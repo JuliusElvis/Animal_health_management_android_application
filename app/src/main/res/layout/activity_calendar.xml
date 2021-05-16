@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="40dp"
         android:text="@string/heading"
         android:textSize="22sp"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="@string/typeOfAnimal"
             android:textSize="22sp"
-            android:textColor="#a8ebe7"/>
+            android:textColor="@color/lightblack"/>
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="Gender"
             android:textSize="22sp"
-            android:textColor="#71cce1"/>
+            android:textColor="@color/lightblack"/>
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,11 +91,13 @@
             android:layout_height="wrap_content"
             android:text="Animal Date of Birth"
             android:textSize="22sp"
-            android:textColor="#a8ebe7"/>
+            android:padding="12dp"
+            android:textColor="@color/lightblack"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="click to select date"
+            android:text="click to select date"
             android:id="@+id/birthDate"
             android:textSize="25sp"/>
         <View
@@ -108,7 +110,7 @@
             android:id="@+id/BtnReport"
             android:text="Generate vaccination calendar"
             android:textSize="22sp"
-            android:textColor="@color/Black"
+            android:textColor="@color/white"
             android:enabled="false"
             android:background="@color/green2"/>
 
