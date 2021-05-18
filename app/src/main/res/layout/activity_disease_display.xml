@@ -5,18 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="80dp"
     tools:context=".activities.diseaseDisplay">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your animal might be suffering from:"/>
+        android:padding="15dp"
+        android:text="Your animal might be suffering from:"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="150dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="100dp"
+        android:src="@drawable/cows1" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:id="@+id/dis"
         android:fontFamily="sans-serif-condensed-medium"
-        android:textSize="50dp"
-        android:text="Disease"/>
+        android:textSize="40sp"
+        android:text="Disease"
+        android:textColor="@color/green2"
+        android:shadowColor="@color/green1"
+        android:shadowDx="0.0"
+        android:shadowDy="0.0"
+        android:shadowRadius="8"/>
+
+
 
 </LinearLayout>

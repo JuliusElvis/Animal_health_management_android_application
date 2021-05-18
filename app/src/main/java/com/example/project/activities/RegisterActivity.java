@@ -8,12 +8,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.project.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
@@ -21,6 +24,9 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class RegisterActivity extends AppCompatActivity {
     Button btnReg;
     TextInputEditText etFullname,etUsername,etEmail,etPassword,etConfirmPass;
+
+    AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +38,15 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.email);
         etPassword = findViewById(R.id.password);
         etConfirmPass = findViewById(R.id.Confirmpassword);
+
+        //initialize validation style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        //email validation
+        awesomeValidation.addValidation(this,R.id.email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
+
+        //password validation
+        awesomeValidation.addValidation(this,R.id.password,".{6,}",R.string.invalid_password);
 
         TextView text3 = findViewById(R.id.text3);
         text3.setPaintFlags(text3.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
@@ -48,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                 confPass = String.valueOf(etConfirmPass.getText()).trim();
 
                 if (!fullname.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) {
+                    if (awesomeValidation.validate()) {
                     if (password.equals(confPass)) {
                         //Start ProgressBar first (Set visibility VISIBLE)
                         Handler handler = new Handler();
@@ -72,11 +88,11 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (putData.startPut()) {
                                     if (putData.onComplete()) {
                                         String result = putData.getResult();
-                                        if (result.equals("Sign Up Success")){
+                                        if (result.equals("Sign Up Success")) {
                                             openLoginActivity();
                                             finish();
-                                        }else {
-                                            Toast.makeText(getApplicationContext(),"Sign up failed",Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "Sign up failed", Toast.LENGTH_SHORT).show();
                                         }
 
                                         //End ProgressBar (Set visibility to GONE)
@@ -87,9 +103,10 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         });
 
-                    }else {
-                        Toast.makeText(getApplicationContext(),"Passwords entered donot match",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Passwords entered do not match", Toast.LENGTH_SHORT).show();
                     }
+                } //validation
                 }
                 else {
                     Toast.makeText(getApplicationContext(),"All fields are required",Toast.LENGTH_SHORT).show();

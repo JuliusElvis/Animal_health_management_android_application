@@ -43,7 +43,7 @@ public class ReportActivity extends AppCompatActivity {
             st18,st19,st20,st21,st22,st23,st24,st25,st26,st27,st28,st29,st30,st31,st32,st33,
             st34,st35,st36,st37,st38,st39,st40;
     //final strings
-    String sw,sp,sp1,sp2;
+    String sw,sp,sp1,sp2,username;
     Bitmap bmp,bmpScale;
     int pageWidth=1200;
 
@@ -77,6 +77,7 @@ public class ReportActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
+        username = getIntent().getExtras().getString("username");
         st = getIntent().getExtras().getString("Value");
         String sv = getResources().getString(R.string.cowName);
         sw = sv+st;
@@ -216,7 +217,7 @@ public class ReportActivity extends AppCompatActivity {
                     Date dt = c.getTime();
                     String dt1 = sdf.format(dt);
                     st11 = st10 + dt1;
-                    tv7.setText(st11);
+                    tv11.setText(st11);
                 }catch (ParseException e){
                     e.printStackTrace();
                 }
@@ -230,10 +231,10 @@ public class ReportActivity extends AppCompatActivity {
                     String dt1 = sdf.format(dt);
                     st12 = getResources().getString(R.string.goatPox);
                     st13 = st12 +dt1;
-                    tv8.setText(st13);
+                    tv12.setText(st13);
                     st14 = getResources().getString(R.string.ccpp);
                     st15 = st14+dt1;
-                    tv9.setText(st15);
+                    tv7.setText(st15);
                 }catch (ParseException e){
                     e.printStackTrace();
                 }
@@ -260,19 +261,19 @@ public class ReportActivity extends AppCompatActivity {
                     String dt1 = sdf.format(dt);
                     st19 = getResources().getString(R.string.Enterotoxaemia);
                     st20 = st19 +dt1;
-                    tv13.setText(st20);
+                    tv9.setText(st20);
 
                     st21=getResources().getString(R.string.Brucellosis);
                     st22 = st21+dt1;
-                    tv14.setText(st22);
+                    tv13.setText(st22);
 
                     st23 = getResources().getString(R.string.footAndMouth);
                     st24 = st23 + dt1;
-                    tv15.setText(st24);
+                    tv14.setText(st24);
 
                     st33 = getResources().getString(R.string.multiVax);
                     st18 = st33 + dt1;
-                    tv12.setText(st18);
+                    tv8.setText(st18);
 
 
                 }catch (ParseException e){
@@ -288,16 +289,16 @@ public class ReportActivity extends AppCompatActivity {
                     String dt1 = sdf.format(dt);
                     st25 = getResources().getString(R.string.blackQuarter);
                     st26 = st25 + dt1;
-                    tv16.setText(st26);
+                    tv15.setText(st26);
                     st27 = getResources().getString(R.string.septicaemia);
                     st28 = st27 + dt1;
-                    tv17.setText(st28);
+                    tv16.setText(st28);
                     st31 = getResources().getString(R.string.anthrax);
                     st35 = st31 + dt1;
-                    tv18.setText(st35);
+                    tv17.setText(st35);
                     st32 = getResources().getString(R.string.rinderPest);
                     st17 =st32 + dt1;
-                    tv11.setText(st17);
+                    tv18.setText(st17);
 
                 }catch (ParseException e){
                     e.printStackTrace();
@@ -341,7 +342,7 @@ public class ReportActivity extends AppCompatActivity {
                         String dt1 = sdf.format(dt);
                         st14 = getResources().getString(R.string.Gumboro);
                         st11 = st14 + dt1;
-                        tv7.setText(st11);
+                        tv10.setText(st11);
                     }catch (ParseException e){
                         e.printStackTrace();
                     }
@@ -354,10 +355,10 @@ public class ReportActivity extends AppCompatActivity {
                         String dt1 = sdf.format(dt);
                         st19 = getResources().getString(R.string.Gumboro2);
                         st13 = st19 + dt1;
-                        tv8.setText(st13);
+                        tv11.setText(st13);
                         st21 = getResources().getString(R.string.IBD);
                         st15 = st21 + dt1;
-                        tv9.setText(st15);
+                        tv12.setText(st15);
                     }catch (ParseException e){
                         e.printStackTrace();
                     }
@@ -371,7 +372,7 @@ public class ReportActivity extends AppCompatActivity {
                         String dt1 = sdf.format(dt);
                         st23 = getResources().getString(R.string.Newcastle);
                         st16 = st23 + dt1;
-                        tv10.setText(st16);
+                        tv7.setText(st16);
                     }catch (ParseException e){
                         e.printStackTrace();
                     }
@@ -384,7 +385,7 @@ public class ReportActivity extends AppCompatActivity {
                         String dt1 = sdf.format(dt);
                         st25 = getResources().getString(R.string.NCD);
                         st17 = st25 + dt1;
-                        tv11.setText(st17);
+                        tv8.setText(st17);
                     }catch (ParseException e){
                         e.printStackTrace();
                     }
@@ -397,7 +398,7 @@ public class ReportActivity extends AppCompatActivity {
                         String dt1 = sdf.format(dt);
                         st27 = getResources().getString(R.string.bursal);
                         st18 = st27 + dt1;
-                        tv12.setText(st18);
+                        tv9.setText(st18);
                     }catch (ParseException e){
                         e.printStackTrace();
                     }
@@ -471,7 +472,7 @@ public class ReportActivity extends AppCompatActivity {
                             String dt1 = sdf.format(dt);
                             st10 = getResources().getString(R.string.iron);
                             st9 = st10 + dt1;
-                            tv6.setText(st9);
+                            tv10.setText(st9);
                         }catch (ParseException e){
                             e.printStackTrace();
                         }
@@ -485,21 +486,21 @@ public class ReportActivity extends AppCompatActivity {
                             String dt1 = sdf.format(dt);
                             st12 = getResources().getString(R.string.Castration);
                             st11 = st12 + dt1;
-                            tv7.setText(st11);
+                            tv11.setText(st11);
 
                             st14 = getResources().getString(R.string.teethClipping);
                             st13 = st14 + dt1;
-                            tv8.setText(st13);
+                            tv12.setText(st13);
 
                             st19 = getResources().getString(R.string.tailDocking);
                             st15 = st19 + dt1;
-                            tv9.setText(st15);
+                            tv7.setText(st15);
                         }catch (ParseException e){
                             e.printStackTrace();
                         }
 
                         st16= getResources().getString(R.string.weaning);
-                        tv10.setText(st16);
+                        tv6.setText(st16);
 
                         try {
                             Date myDate = sdf.parse(st6);
@@ -510,11 +511,11 @@ public class ReportActivity extends AppCompatActivity {
                             String dt1 = sdf.format(dt);
                             st19 = getResources().getString(R.string.prrs);
                             st17 = st19 + dt1;
-                            tv11.setText(st17);
+                            tv8.setText(st17);
 
                             st21 = getResources().getString(R.string.rhinitis);
                             st18 = st21 + dt1;
-                            tv12.setText(st18);
+                            tv9.setText(st18);
                         }catch (ParseException e){
                             e.printStackTrace();
                         }
@@ -591,7 +592,8 @@ public class ReportActivity extends AppCompatActivity {
         finish();
     }
     public void openNewActivity(){
-        Intent intent = new Intent(this, DocDisplayActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("username",username);
         startActivity(intent);
     }
 
@@ -599,7 +601,7 @@ public class ReportActivity extends AppCompatActivity {
         getReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "report failed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "report failed", Toast.LENGTH_SHORT).show();
                 PdfDocument pdfDocument = new PdfDocument();
                 Paint myPaint = new Paint();
                 Paint titlePaint = new Paint();
@@ -612,12 +614,12 @@ public class ReportActivity extends AppCompatActivity {
                 titlePaint.setTextAlign(Paint.Align.CENTER);
                 titlePaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
                 titlePaint.setTextSize(70);
-                canvas.drawText("Livestock Manager",pageWidth/2,200,titlePaint);
+                canvas.drawText("Livestock Manager",pageWidth/2,100,titlePaint);
 
                 titlePaint.setTextAlign(Paint.Align.CENTER);
                 titlePaint.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.ITALIC));
                 titlePaint.setTextSize(70);
-                canvas.drawText("Animal Report",pageWidth/2,500,titlePaint);
+                canvas.drawText("Vaccination schedule",pageWidth/2,500,titlePaint);
 
                 myPaint.setTextAlign(Paint.Align.LEFT);
                 myPaint.setTextSize(35f);
@@ -653,6 +655,7 @@ public class ReportActivity extends AppCompatActivity {
                 }
                 pdfDocument.close();
                 Toast.makeText(getApplicationContext(), "success, file saved to documents", Toast.LENGTH_SHORT).show();
+                openNewActivity();
 
             }
         });

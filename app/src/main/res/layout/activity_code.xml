@@ -5,8 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="30dp"
     tools:context=".resetPass.CodeActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter the code sent to your email"
+        android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
@@ -24,6 +30,8 @@
         android:id="@+id/newCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/green2"
+        android:textColor="@color/white"
         android:text="Verify code" />
 
 </LinearLayout>

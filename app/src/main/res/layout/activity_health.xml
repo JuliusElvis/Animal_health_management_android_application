@@ -146,6 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Scan for disease"
+                android:textColor="@color/white"
                 android:background="@color/green2"/>
             <TextView
                 android:layout_width="match_parent"

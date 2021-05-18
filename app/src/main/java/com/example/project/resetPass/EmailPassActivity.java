@@ -48,6 +48,7 @@ public class EmailPassActivity extends AppCompatActivity {
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
+                                    Toast.makeText(getApplicationContext(),"Verification code has been sent to your email",Toast.LENGTH_SHORT).show();
                                     openActivity();
                                 }else {
                                     Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();

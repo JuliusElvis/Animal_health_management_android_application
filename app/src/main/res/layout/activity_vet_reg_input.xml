@@ -8,6 +8,12 @@
     android:layout_marginTop="30dp"
     tools:context=".activities.vetRegInput">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Registration Number as indicated in your license"
+        android:textColor="@color/green2"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

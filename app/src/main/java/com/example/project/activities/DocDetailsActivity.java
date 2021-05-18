@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.project.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
@@ -24,6 +26,8 @@ public class DocDetailsActivity extends AppCompatActivity {
     String reg;
     TextView vetname;
 
+    AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,12 @@ public class DocDetailsActivity extends AppCompatActivity {
         etphoneNo = findViewById(R.id.phoneNo);
         regVet = findViewById(R.id.registerButton);
         vetname = findViewById(R.id.vetName);
+
+        //initialize validation style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        //phone validation
+        awesomeValidation.addValidation(this,R.id.phoneNo,"[0]{1}[0-9]{9}$",R.string.invalid_mobile);
 
         etLocality = findViewById(R.id.locality);
          reg = Objects.requireNonNull(getIntent().getExtras()).getString("reg_no");
@@ -46,7 +56,8 @@ public class DocDetailsActivity extends AppCompatActivity {
                 locality = String.valueOf(etLocality.getText());
                 reg_no = String.valueOf(reg);
 
-                if (!phone.equals("") && !locality.equals("")){
+                if (!phone.equals("") && !locality.equals("")) {
+                    if (awesomeValidation.validate()) {
                     Handler handler = new Handler();
                     handler.post(new Runnable() {
                         @Override
@@ -67,15 +78,15 @@ public class DocDetailsActivity extends AppCompatActivity {
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
-                                    if (result.equals("Registration Success")){
-                                        Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                                    if (result.equals("Registration Success")) {
+                                        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
                                         openNewActivity();
                                         finish();
-                                    }else {
-                                        if (result.equals("Registration Failed")){
-                                            Toast.makeText(getApplicationContext(),"Registration failed1",Toast.LENGTH_SHORT).show();
-                                        }else {
-                                        Toast.makeText(getApplicationContext(),"Registration failed",Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        if (result.equals("Registration Failed")) {
+                                            Toast.makeText(getApplicationContext(), "Registration failed1", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
                                         }
                                     }
 
@@ -86,6 +97,7 @@ public class DocDetailsActivity extends AppCompatActivity {
                             //End Write and Read data with URL
                         }
                     });
+                }
                 }else {
                     Toast.makeText(getApplicationContext(),"Enter your details",Toast.LENGTH_SHORT).show();
                 }

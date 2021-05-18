@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.project.R;
@@ -13,6 +14,7 @@ public class diseaseDisplay extends AppCompatActivity {
 
     TextView disease,doc;
     String disease1,username;
+    //ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,8 @@ public class diseaseDisplay extends AppCompatActivity {
         disease = findViewById(R.id.dis);
         disease1 = getIntent().getExtras().getString("disease");
         username = getIntent().getExtras().getString("username");
+        //imageView = findViewById(R.id.image);
+        //imageView.setImageResource(R.drawable.cows);
         disease.setText(disease1);
 
     }

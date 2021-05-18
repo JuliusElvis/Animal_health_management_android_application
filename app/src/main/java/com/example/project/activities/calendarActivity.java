@@ -30,6 +30,7 @@ public class calendarActivity extends AppCompatActivity {
 
     RadioGroup radioGroup;
     RadioButton radioButton;
+    String username;
 
 
     private TextView mDisplayDate;
@@ -61,6 +62,7 @@ public class calendarActivity extends AppCompatActivity {
         cowName = findViewById(R.id.cowname);
         reportGen = findViewById(R.id.BtnReport);
         radioGroup = findViewById(R.id.radioGroup);
+        username = getIntent().getExtras().getString("username");
         // textView = findViewById(R.id.newDate);
 
         mDisplayDate = findViewById(R.id.birthDate);
@@ -142,6 +144,7 @@ public class calendarActivity extends AppCompatActivity {
         checkButton();
         intent.putExtra("Value2",c);
         intent.putExtra("Value3",newDate);
+        intent.putExtra("username",username);
 
         startActivity(intent);
     }
