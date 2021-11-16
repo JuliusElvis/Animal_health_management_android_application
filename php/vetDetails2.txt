@@ -1,0 +1,69 @@
+<?php
+require "Database.php";
+$db = new DataBase();
+
+$upload_path = 'uploads/'
+
+$server_ip = gethostbyname(gethostname());
+
+$upload_url = 'http://'.$server_ip.'/project1/'.$upload_path;
+
+$response =array();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if (isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_FILES['license']['name']) && isset($_POST['locality'])) {
+		if ($db->dbConnect()) {
+
+		$fullname = $_POST['$fullname'];
+        $email = $_POST['$email'];
+        $phone = $_POST['$phone'];
+        $license = $_POST['$license'];
+        $locality = $_POST['$locality'];
+
+        $name = $_POST['name'];
+
+        $fileinfo = pathinfo($_FILES['image']['name']);
+
+        $extension = $fileinfo['extension'];
+
+        $file_url = $upload_url . getFileName() . '.' . $extension;
+
+        $file_path = $upload_path . getFileName() . '.'. $extension; 
+
+        try {
+            move_uploaded_file($_FILES['image']['tmp_name'], $file_path);
+
+            $sql = "INSERT INTO vet_doc_details(fullname,email,phone,name,license,locality) VALUES('$fullname','$email','$phone','$name',$file_url','$locality')";
+                $response['error'] = false;
+                $response['license'] = $file_url;
+                $response['name'] = $name;
+
+
+        } catch (Exception $e) {
+            $response['error'] = false;
+            $response['message'] = $e->getMessage();
+        }
+    }else{
+    	$response['error'] = true;
+    	$response['message'] = 'please choose image';
+    }
+
+		}
+	}
+}
+
+Function getFileName(){
+	$conn = $db->dbConnect();
+	$sql = "SELECT max(id) as id FROM vet_doc_details";
+
+	$result = mysqli_fetch_array(mysqli_query($con,$sql));
+
+	mysqli_close($con);
+ 	if($result['id']==null)
+ 	return 1; 
+ 	else 
+ 	return ++$result['id']; 
+ }
+}
+
+?>
